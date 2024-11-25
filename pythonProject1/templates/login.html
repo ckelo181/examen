@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Inicio de Sesión</h2>
+        <form method="POST">
+            <label for="username">Ingresa tu nombre:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Ingresa tu contraseña:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit" class="button button-blue">Verificar</button>
+        </form>
+        {% if mensaje %}
+            <h3>{{ mensaje }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
